@@ -3,6 +3,22 @@ from rest_framework import viewsets
 from .serializers import TodoSerializer, GuardianSerializer, RolesSerializer, StudentsSerializer, AddressSerializer
 from .models import Todo, Guardian, Roles, Students, Address
 
+from django.http import HttpResponse
+from django.template import loader
+from todo.models import Students
+
+def index(request):
+    students = Students.objects.order_by('id')
+    guardian = Guardian.objects.order_by('id')
+    
+
+    template = loader.get_template('report.html')
+    context = {
+        'Students': students,
+        'Guardians': guardian
+    }
+    return HttpResponse(template.render(context, request))
+
 # Create your views here.
 
 class TodoView(viewsets.ModelViewSet):

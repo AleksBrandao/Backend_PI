@@ -60,3 +60,29 @@ class Students(models.Model):
     def _str_(self):
         return self.nome
 
+class About(models.Model):
+    titulo = models.CharField(max_length=120)
+    descricao1 = models.CharField(max_length=120)
+    descricao2 = models.CharField(max_length=120)
+    def _str_(self):
+        return self.titulo
+
+class Cursos(models.Model):
+    titulo = models.CharField(max_length=120)
+    descricao = models.CharField(max_length=500)
+    materiais = models.CharField(max_length=120)
+    duracao = models.CharField(max_length=120)
+    idade = models.CharField(max_length=120)
+    Investimento = models.CharField(max_length=120)
+    preço = models.CharField(max_length=120)
+    def _str_(self):
+        return self.cursos
+
+class Professores(models.Model):
+    instagran = models.CharField(max_length=120)
+    descricao = models.CharField(max_length=120)
+    foto = models.CharField(max_length=120)
+    def _str_(self):
+        return self.professores
+   
+
