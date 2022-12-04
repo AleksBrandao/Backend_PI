@@ -20,7 +20,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 # Create your views here.
-#teste novamente comentário adicionado 11:31
+#teste novamente comentário adicionado 11:45
 
 class TodoView(viewsets.ModelViewSet):
     serializer_class = TodoSerializer
