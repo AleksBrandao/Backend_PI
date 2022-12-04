@@ -4,6 +4,7 @@ from .serializers import TodoSerializer, GuardianSerializer, RolesSerializer, St
 from .models import Todo, Guardian, Roles, Students, Address
 
 # Create your views here.
+#teste novamente
 
 class TodoView(viewsets.ModelViewSet):
     serializer_class = TodoSerializer
